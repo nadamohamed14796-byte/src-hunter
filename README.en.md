@@ -11,14 +11,14 @@ It bundles a knowledge base built from public sources: nineteen attack-class pla
 Marketplace:
 
 ```
-/plugin marketplace add MyuriKanao/src-hunter-skill
+/plugin marketplace add nadamohamed14796-byte/src-hunter
 /plugin install src-hunter@src-hunter
 ```
 
 Plain git:
 
 ```
-git clone https://github.com/MyuriKanao/src-hunter-skill.git ~/.claude/skills/src-hunter
+git clone https://github.com/nadamohamed14796-byte/src-hunter.git ~/.claude/skills/src-hunter
 ```
 
 ## What's in here
@@ -31,7 +31,7 @@ references/
   dictionaries/   default credentials and component fingerprints (Chinese stack)
   templates/      submission template (CVSS 4.0)
   h1-reports/     2887 disclosed reports, raw + grouped by weakness
-  payloader/      305 structured payloads, 263 WAF/EDR bypass steps, 114 tool cheats
+  payloader/      305 structured payloads, 176 payload entries containing bypass variants, 114 tool references; the detailed category table lists 303 steps (the older upstream summary says 263; counts need reconciliation)
 ```
 
 The playbooks are the entry point. They're written from a black-box hunter's perspective — assume you only have a URL — and each one carries the same shape: where to look, what to throw, what response shapes to watch for, how to escalate, and the legal lines.
@@ -94,7 +94,7 @@ Or invoke explicitly:
 
 - HackerOne hacktivity feed — 2887 disclosed High/Critical reports, fetched directly. Public data.
 - WooYun historical archive — 88,636 cases. Only parameter-frequency tables, case IDs, and bypass patterns are retained. The platform is defunct; data is unrecoverable elsewhere.
-- Payloader — 305 structured payloads, 263 WAF/EDR bypass steps, 114 tool cheats from the open-source `3516634930/Payloader` repo.
+- Payloader — 305 structured payloads and 114 tool references from the open-source `3516634930/Payloader` repo. The bundled `waf-bypass.md` contains 176 base payload entries and its category table sums to 303 bypass steps; the historical upstream summary says 263, so the counts are not fully reconciled and 263 should not be presented as the current detailed-table total.
 
 This project re-organizes and translates these sources into a hunter-oriented skill. No proprietary data, no scraping of authenticated content.
 
