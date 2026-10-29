@@ -24,14 +24,14 @@ intake → recon → enum → hunt → report
 Marketplace：
 
 ```bash
-/plugin marketplace add MyuriKanao/src-hunter-skill
+/plugin marketplace add nadamohamed14796-byte/src-hunter
 /plugin install src-hunter@src-hunter
 ```
 
 Git：
 
 ```bash
-git clone https://github.com/MyuriKanao/src-hunter-skill.git ~/.claude/skills/src-hunter
+git clone https://github.com/nadamohamed14796-byte/src-hunter.git ~/.claude/skills/src-hunter
 ```
 
 ## 目录结构
@@ -44,7 +44,7 @@ references/
   dictionaries/   国产组件指纹和默认凭据
   templates/      CVSS 4.0 报告模板
   h1-reports/     2887 份已披露报告原始数据，并按 weakness 分组
-  payloader/      305 个结构化 payload、263 个 WAF/EDR 绕过步骤、114 个工具命令
+  payloader/      305 个结构化 payload、176 个含绕过变体的 payload 条目、114 个工具命令；分类明细表列出 303 个绕过步骤（上游旧摘要为 263，口径待核对）
 ```
 
 playbook 是主要入口。所有 playbook 都按黑盒视角编写，默认你只有 URL，没有源码。
@@ -119,7 +119,7 @@ skill 内置触发词包括：
 
 - HackerOne hacktivity feed：2887 份已披露 High / Critical 报告，来源为公开数据。
 - WooYun 历史档案：覆盖 88,636 条案例，仅保留参数频率、案例 ID 和 bypass 模式等统计残余。
-- Payloader：305 条结构化 payload + 263 个 WAF / EDR 绕过步骤 + 114 条工具命令，原仓库为 `3516634930/Payloader`。
+- Payloader：305 条结构化 payload、114 条工具命令。当前 `waf-bypass.md` 含 176 个原始 payload 条目，分类表合计列出 303 个绕过步骤；上游历史摘要记载 263 个步骤，统计口径/版本尚未对齐，因此不把 263 当作本地明细总数。原仓库为 `3516634930/Payloader`。
 
 本项目只整理、翻译和重组公开资料，不包含专有数据，也不抓取需要认证的内容。
 
